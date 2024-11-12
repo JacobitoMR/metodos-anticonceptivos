@@ -1,426 +1,101 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>Historia de los Anticonceptivos: Un Viaje a Través del Tiempo</title>
-    <style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #34495e;
-            --accent-color: #3498db;
-            --background-color: #f5f5f5;
-            --text-color: #333;
-            --light-text: #666;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            background-color: var(--background-color);
-            color: var(--text-color);
-        }
-
-        header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 3rem 1rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('/api/placeholder/1920/400') center/cover;
-            opacity: 0.1;
-            z-index: 0;
-        }
-
-        header > * {
-            position: relative;
-            z-index: 1;
-        }
-
-        .header-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        nav {
-            background-color: var(--secondary-color);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0;
-        }
-
-        nav li {
-            padding: 1rem;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-        }
-
-        nav a:hover {
-            background-color: var(--accent-color);
-            transform: translateY(-2px);
-        }
-
-        main {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-
-        .intro {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 3rem;
-            padding: 2rem;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        .timeline {
-            position: relative;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 4px;
-            height: 100%;
-            background: var(--accent-color);
-            opacity: 0.3;
-        }
-
-        .period {
-            margin-bottom: 4rem;
-            position: relative;
-        }
-
-        .period-header {
-            text-align: center;
-            margin-bottom: 2rem;
-            background: var(--primary-color);
-            color: white;
-            padding: 1rem;
-            border-radius: 8px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .method-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .method-card {
-            background: white;
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .method-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .method-card h3 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 0.5rem;
-        }
-
-        .method-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin: 1rem 0;
-        }
-
-        .fact-box {
-            background: #f8f9fa;
-            border-left: 4px solid var(--accent-color);
-            padding: 1rem;
-            margin: 1rem 0;
-        }
-
-        .stats {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            margin: 2rem 0;
-        }
-
-        .stat-card {
-            background: var(--primary-color);
-            color: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            text-align: center;
-            min-width: 200px;
-            margin: 1rem;
-        }
-
-        .stat-number {
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-
-        footer {
-            background: var(--primary-color);
-            color: white;
-            padding: 2rem;
-            text-align: center;
-            margin-top: 4rem;
-        }
-
-        .references {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            margin-top: 3rem;
-        }
-
-        .references h3 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        .references ul {
-            list-style: none;
-        }
-
-        .references li {
-            margin-bottom: 0.5rem;
-            padding-left: 1rem;
-            border-left: 2px solid var(--accent-color);
-        }
-
-        @media (max-width: 768px) {
-            .timeline::before {
-                left: 0;
-            }
-            
-            .method-cards {
-                grid-template-columns: 1fr;
-            }
-
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            nav li {
-                width: 100%;
-                text-align: center;
-            }
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Métodos Anticonceptivos y Su Trayecto en la Historia</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <div class="header-content">
-            <h1>Historia de los Anticonceptivos</h1>
-            <p>Un viaje fascinante a través de los métodos de control de la natalidad desde la antigüedad hasta nuestros días</p>
-        </div>
+        <h1>Métodos Anticonceptivos y Su Trayecto en la Historia</h1>
+        <p>Explora la evolución de los métodos anticonceptivos a través de los tiempos.</p>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#antiguedad">Antigüedad</a></li>
-            <li><a href="#edad-media">Edad Media</a></li>
-            <li><a href="#era-moderna">Era Moderna</a></li>
-            <li><a href="#siglo-xx">Siglo XX</a></li>
-            <li><a href="#actualidad">Actualidad</a></li>
-            <li><a href="#estadisticas">Estadísticas</a></li>
-        </ul>
-    </nav>
+    <section>
+        <h2>Introducción</h2>
+        <p>La anticoncepción ha sido una práctica utilizada por diversas civilizaciones para el control de la natalidad y la planificación familiar. Desde métodos antiguos hasta las tecnologías modernas, el camino ha sido largo y fascinante.</p>
+    </section>
 
-    <main>
-        <section class="intro" id="inicio">
-            <h2>El Control de la Natalidad a Través de la Historia</h2>
-            <p>La búsqueda de métodos anticonceptivos ha sido una constante en la historia de la humanidad, reflejando la evolución de la medicina, la sociedad y la cultura.</p>
-            
-            <div class="stats">
-                <div class="stat-card">
-                    <div class="stat-number">5000+</div>
-                    <div>Años de Historia</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">15+</div>
-                    <div>Métodos Modernos</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">99%</div>
-                    <div>Efectividad Máxima</div>
-                </div>
-            </div>
-        </section>
+    <section>
+        <h2>1. Métodos Antiguos</h2>
+        <p>En las antiguas civilizaciones, como Egipto y Mesopotamia, se utilizaban métodos rudimentarios, como hierbas y compuestos naturales, para evitar embarazos. Estos métodos eran primitivos y a menudo poco efectivos.</p>
+    </section>
 
-        <div class="timeline">
-            <section class="period" id="antiguedad">
-                <div class="period-header">
-                    <h2>Antigüedad (3000 a.C. - 500 d.C.)</h2>
-                </div>
-                <div class="method-cards">
-                    <div class="method-card">
-                        <h3>Egipto Antiguo</h3>
-                        <img src="/api/placeholder/400/200" alt="Papiro médico egipcio" class="method-image">
-                        <p>Los egipcios fueron pioneros en el desarrollo de métodos anticonceptivos:</p>
-                        <ul>
-                            <li>Pesarios de miel y acacia</li>
-                            <li>Tapones vaginales de algodón y lino</li>
-                            <li>Preparaciones herbales documentadas en papiros médicos</li>
-                        </ul>
-                        <div class="fact-box">
-                            <strong>¿Sabías que?</strong> El Papiro de Ebers (1550 a.C.) es uno de los primeros documentos médicos que menciona métodos anticonceptivos.
-                        </div>
-                    </div>
+    <section>
+        <h2>2. Edad Media y Renacimiento</h2>
+        <p>Durante la Edad Media, los métodos anticonceptivos fueron influenciados por la religión y la moral de la época. Se utilizaban métodos caseros, pero muchos eran prohibidos por instituciones religiosas.</p>
+    </section>
 
-                    <div class="method-card">
-                        <h3>Civilización Griega y Romana</h3>
-                        <img src="/api/placeholder/400/200" alt="Ruinas griegas" class="method-image">
-                        <p>Aportaciones significativas al conocimiento anticonceptivo:</p>
-                        <ul>
-                            <li>Uso del silfio hasta su extinción</li>
-                            <li>Desarrollo de pesarios de diferentes materiales</li>
-                            <li>Documentación médica por Soranus de Éfeso</li>
-                        </ul>
-                    </div>
+    <section>
+        <h2>3. Revolución Industrial</h2>
+        <p>Con el avance de la ciencia y la medicina en el siglo XIX, comenzaron a desarrollarse métodos más efectivos, como el uso de preservativos de látex, el cual se volvió popular durante esta época.</p>
+    </section>
 
-                    <div class="method-card">
-                        <h3>China Antigua</h3>
-                        <img src="/api/placeholder/400/200" alt="Medicina tradicional china" class="method-image">
-                        <p>Métodos documentados en textos médicos tradicionales:</p>
-                        <ul>
-                            <li>Aceites especiales</li>
-                            <li>Preparados de mercurio</li>
-                            <li>Técnicas de control de la fertilidad</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
+    <section>
+        <h2>4. Siglo XX: La Píldora Anticonceptiva</h2>
+        <p>En la década de 1960, la aparición de la píldora anticonceptiva revolucionó el control de la natalidad. Permitió a las mujeres tener mayor control sobre su fertilidad y fue un hito en la historia de la anticoncepción.</p>
+    </section>
 
-            <section class="period" id="edad-media">
-                <div class="period-header">
-                    <h2>Edad Media (500 - 1500)</h2>
-                </div>
-                <div class="method-cards">
-                    <div class="method-card">
-                        <h3>Medicina Medieval</h3>
-                        <img src="/api/placeholder/400/200" alt="Manuscrito medieval" class="method-image">
-                        <p>Durante este período:</p>
-                        <ul>
-                            <li>Uso de amuletos y rituales</li>
-                            <li>Hierbas medicinales</li>
-                            <li>Conocimientos transmitidos oralmente</li>
-                        </ul>
-                    </div>
+    <section>
+        <h2>5. Métodos Modernos</h2>
+        <p>Hoy en día, existen múltiples opciones anticonceptivas, desde los dispositivos intrauterinos (DIU) hasta los métodos hormonales y de barrera. La ciencia sigue innovando para ofrecer métodos seguros y efectivos.</p>
+    </section>
 
-                    <div class="method-card">
-                        <h3>Influencia Religiosa</h3>
-                        <img src="/api/placeholder/400/200" alt="Monasterio medieval" class="method-image">
-                        <p>Impacto en el desarrollo de anticonceptivos:</p>
-                        <ul>
-                            <li>Restricciones en la investigación médica</li>
-                            <li>Conservación de conocimientos en monasterios</li>
-                            <li>Debates teológicos sobre el control natal</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
+    <footer>
+        <p>&copy; 2024 - Historia de los Métodos Anticonceptivos</p>
+    </footer>
+</body>
+</html>
 
-            <section class="period" id="era-moderna">
-                <div class="period-header">
-                    <h2>Era Moderna (1500 - 1900)</h2>
-                </div>
-                <div class="method-cards">
-                    <div class="method-card">
-                        <h3>Revolución Científica</h3>
-                        <img src="/api/placeholder/400/200" alt="Laboratorio antiguo" class="method-image">
-                        <p>Avances significativos:</p>
-                        <ul>
-                            <li>Descubrimiento del espermatozoide (1677)</li>
-                            <li>Desarrollo del preservativo de látex</li>
-                            <li>Primeros estudios sobre el ciclo menstrual</li>
-                        </ul>
-                    </div>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-                    <div class="method-card">
-                        <h3>Movimientos Sociales</h3>
-                        <img src="/api/placeholder/400/200" alt="Manifestación histórica" class="method-image">
-                        <p>Cambios sociales importantes:</p>
-                        <ul>
-                            <li>Primeros movimientos por el control de la natalidad</li>
-                            <li>Debate público sobre anticonceptivos</li>
-                            <li>Surgimiento de clínicas de planificación familiar</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-            <section class="period" id="siglo-xx">
-                <div class="period-header">
-                    <h2>Siglo XX: La Revolución Anticonceptiva</h2>
-                </div>
-                <div class="method-cards">
-                    <div class="method-card">
-                        <h3>La Píldora Anticonceptiva</h3>
-                        <img src="/api/placeholder/400/200" alt="Píldoras anticonceptivas" class="method-image">
-                        <p>Un hito en la historia:</p>
-                        <ul>
-                            <li>Desarrollo en 1950</li>
-                            <li>Aprobación por la FDA en 1960</li>
-                            <li>Impacto social y cultural</li>
-                        </ul>
-                        <div class="fact-box">
-                            <strong>Dato importante:</strong> La píldora fue el primer medicamento aprobado para uso en personas sanas.
-                        </div>
-                    </div>
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+}
 
-                    <div class="method-card">
-                        <h3>Avances Tecnológicos</h3>
-                        <img src="/api/placeholder/
+h1 {
+    margin-bottom: 10px;
+}
+
+section {
+    margin: 20px;
+    max-width: 800px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
